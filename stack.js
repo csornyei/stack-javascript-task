@@ -21,7 +21,10 @@ class Stack {
     }
 
     peek() {
-        return this.items[this.items.length - 1];
+        if (this.size >= 1) {
+            return this.items[this.items.length - 1];
+        }
+        throw new Error('Stack is empty!');
     }
 
     swap() {
