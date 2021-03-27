@@ -26,10 +26,13 @@ class Stack {
 
     swap() {
         if (this.size > 1) {
-            const last = this.items[this.items.length - 1];
-            const beforeLast = this.items[this.items.length - 2];
-            this.items[this.items.length - 1] = beforeLast;
-            this.items[this.items.length - 2] = last;
+            [
+                this.items[this.items.length - 1],
+                this.items[this.items.length - 2]
+            ] = [
+                this.items[this.items.length - 2],
+                this.items[this.items.length - 1]
+            ]
         } else {
             throw new Error('Not enough element to swap!');
         }
